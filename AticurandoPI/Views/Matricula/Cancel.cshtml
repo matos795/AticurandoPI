@@ -1,0 +1,21 @@
+﻿@model AticurandoPI.Models.Matricula
+
+<h2>Cancelar Matrícula</h2>
+
+<h4>Tem certeza que deseja cancelar?</h4>
+
+<div>
+    <p><strong>Aluno:</strong> @Model.Aluno?.Nome</p>
+    <p><strong>Turma:</strong> @Model.Turma?.Turno</p>
+    <p><strong>Status:</strong> @Model.Status</p>
+</div>
+
+<form asp-action="CancelConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <label asp-for="MotivoCancelamento">Motivo de Cancelamento</label>
+        <input asp-for="MotivoCancelamento" class="form-control" required />
+
+    <button class="btn btn-danger">Excluir</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

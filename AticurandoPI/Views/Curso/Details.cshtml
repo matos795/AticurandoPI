@@ -1,0 +1,10 @@
+﻿@model AticurandoPI.Models.Curso
+<h2>Detalhes</h2>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Nome</dt><dd class="col-sm-10">@Model.Nome</dd>
+        <dt class="col-sm-2">Descrição</dt><dd class="col-sm-10">@Model.Descricao</dd>
+    </dl>
+</div>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Voltar</a>

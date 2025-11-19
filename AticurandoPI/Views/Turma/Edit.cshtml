@@ -1,0 +1,40 @@
+﻿@model AticurandoPI.Models.Turma
+@{
+    ViewData["Title"] = "Editar Turma";
+}
+<h1>Editar Turma</h1>
+
+<form asp-action="Edit" method="post">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Capacidade"></label>
+        <input asp-for="Capacidade" class="form-control" type="number" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="Turno"></label>
+        <select asp-for="Turno" class="form-control" required>
+            <option value="">Selecione o turno</option>
+            <option value="Manhã">Manhã</option>
+            <option value="Tarde">Tarde</option>
+            <option value="Noite">Noite</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="DataInicio"></label>
+        <input asp-for="DataInicio" class="form-control" type="datetime-local" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="DataFim"></label>
+        <input asp-for="DataFim" class="form-control" type="datetime-local" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="Curso"></label>
+        <select asp-for="CursoId" asp-items="ViewBag.CursoId" class="form-control" required></select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+

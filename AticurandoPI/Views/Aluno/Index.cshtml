@@ -1,0 +1,64 @@
+﻿@model IEnumerable<AticurandoPI.Models.Aluno>
+
+@{
+    ViewData["Title"] = "Alunos";
+}
+
+<section id="atc-container-section" class="atc-container">
+
+<h1 class="atc-section-title atc-mb20">Alunos</h1>
+
+<p class="atc-btn-page-container">
+    <a class="atc-btn atc-btn-white" asp-action="Create">Novo Aluno</a>
+</p>
+
+<form class="atc-search-bar">
+    <button type="submit">🔎︎</button>
+    <input type="text" placeholder="Nome do Aluno" />
+    <button type="reset">✖</button>
+</form>
+
+<table class="atc-table atc-mb20 atc-mt20">
+    <thead>
+        <tr class="atc-clickable-row">
+            <th class="atc-txt-left">#</th>
+            <th class="atc-txt-left">Nome</th>
+            <th class="atc-txt-left atc-tb768">Email</th>
+            <th class="atc-txt-left">Telefone</th>
+            <th class="atc-txt-left atc-tb768">Data Nasc.</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+    <tr class="atc-clickable-row">
+        
+        <td class="atc-txt-left">@item.Id</td>
+        
+        <td class="atc-txt-left">
+            <a asp-action="Details" asp-route-id="@item.Id" class="atc-row-link-overlay"></a>
+            
+            <span>@item.Nome</span>
+        </td>
+        
+        <td class="atc-txt-left atc-tb768">@item.Email</td>
+        <td class="atc-txt-left">@item.Telefone</td>
+        <td class="atc-txt-left atc-tb768">@(item.DataNascimento.ToString("dd-MM-yyyy") ?? "")</td>
+        
+        <td>
+            <a asp-action="Delete" asp-route-id="@item.Id" class="atc-action-btn atc-delete-btn atc-action-above">
+                <i class="fa-solid fa-trash"></i> 
+            </a>
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.Id" class="atc-action-btn atc-edit-btn atc-action-above">
+                <i class="fa-solid fa-pencil"></i>
+            </a>
+        </td>
+    </tr>
+}
+    </tbody>
+</table>
+</section>

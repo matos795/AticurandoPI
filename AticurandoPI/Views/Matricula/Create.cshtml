@@ -1,0 +1,28 @@
+﻿@model AticurandoPI.Models.Matricula
+
+@{
+    ViewData["Title"] = "Nova Matrícula";
+}
+
+<h1>Nova Matrícula</h1>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <!-- Aluno -->
+    <div class="form-group">
+        <label asp-for="AlunoId">Aluno</label>
+        <select asp-for="AlunoId" asp-items="ViewBag.AlunoId" class="form-control" required></select>
+    </div>
+
+    <!-- Turma -->
+    <div class="form-group">
+        <label asp-for="TurmaId">Turma</label>
+        <select asp-for="TurmaId" asp-items="ViewBag.TurmaId" class="form-control" required></select>
+    </div>
+
+    <br />
+    <button class="btn btn-primary">Salvar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+
+</form>

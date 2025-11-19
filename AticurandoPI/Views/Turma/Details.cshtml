@@ -1,0 +1,39 @@
+﻿@model AticurandoPI.Models.Turma
+
+<h2>Detalhes da Turma</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Id</dt>
+        <dd class="col-sm-10">@Model.Id</dd>
+
+        <dt class="col-sm-2">Capacidade</dt>
+        <dd class="col-sm-10">@Model.Capacidade</dd>
+
+        <dt class="col-sm-2">Turno</dt>
+        <dd class="col-sm-10">@Model.Turno</dd>
+
+        <dt class="col-sm-2">Data de Início</dt>
+        <dd class="col-sm-10">@Model.DataInicio.ToString("dd/MM/yyyy HH:mm")</dd>
+
+        <dt class="col-sm-2">Data de Fim</dt>
+        <dd class="col-sm-10">@Model.DataFim.ToString("dd/MM/yyyy HH:mm")</dd>
+    </dl>
+
+    <h3 class="mt-4">Informações do Curso</h3>
+    <hr />
+
+    <dl class="row">
+        <dt class="col-sm-2">Id</dt>
+        <dd class="col-sm-10">@Model.Curso?.Id</dd>
+
+        <dt class="col-sm-2">Nome</dt>
+        <dd class="col-sm-10">@Model.Curso?.Nome</dd>
+
+        <dt class="col-sm-2">Descrição</dt>
+        <dd class="col-sm-10">@Model.Curso?.Descricao</dd>
+    </dl>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Voltar</a>

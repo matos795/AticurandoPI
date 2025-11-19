@@ -1,0 +1,17 @@
+﻿@model AticurandoPI.Models.Matricula
+
+<h2>Excluir Matrícula</h2>
+
+<h4>Tem certeza que deseja excluir?</h4>
+
+<div>
+    <p><strong>Aluno:</strong> @Model.Aluno?.Nome</p>
+    <p><strong>Turma:</strong> @Model.Turma?.Turno</p>
+    <p><strong>Status:</strong> @Model.Status</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button class="btn btn-danger">Excluir</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

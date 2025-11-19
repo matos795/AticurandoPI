@@ -1,0 +1,161 @@
+/* ============================ */
+/*    PALETA DE CORES ADMIN    */
+/* ============================ */
+
+:root {
+    --dsc-color-blue: #407bff;
+    --dsc-color-blue-dark: #305edc;
+    --dsc-color-gray-light: #f5f5f5;
+    --dsc-color-gray: #e1e1e1;
+    --dsc-color-dark: #444;
+    --dsc-color-white: #fff;
+}
+
+/* ============================ */
+/*           LAYOUT             */
+/* ============================ */
+
+body {
+    background: var(--dsc-color-gray-light);
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ============================ */
+/*           HEADER             */
+/* ============================ */
+
+.dsc-header {
+    background: var(--dsc-color-white);
+    padding: 12px 0;
+    box-shadow: 0px 2px 4px #d7d7d7;
+}
+
+.dsc-nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dsc-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dsc-color-blue);
+}
+
+.dsc-menu-item {
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--dsc-color-dark);
+}
+
+    .dsc-menu-item:hover {
+        color: var(--dsc-color-blue);
+    }
+
+/* ============================ */
+/*           CARDS              */
+/* ============================ */
+
+.dsc-card {
+    background: var(--dsc-color-white);
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 5px #d6d6d6;
+}
+
+/* ============================ */
+/*           BUTTONS            */
+/* ============================ */
+
+.dsc-btn {
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.dsc-btn-blue {
+    background: var(--dsc-color-blue);
+    color: white;
+}
+
+    .dsc-btn-blue:hover {
+        background: var(--dsc-color-blue-dark);
+    }
+
+.dsc-btn-white {
+    background: white;
+    border: 1px solid var(--dsc-color-blue);
+    color: var(--dsc-color-blue);
+}
+
+    .dsc-btn-white:hover {
+        background: #f0f4ff;
+    }
+
+/* ============================ */
+/*           TABLE              */
+/* ============================ */
+
+.dsc-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0px 2px 5px #d1d1d1;
+}
+
+    .dsc-table th {
+        background: var(--dsc-color-blue);
+        color: white;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .dsc-table td {
+        padding: 12px;
+        font-size: 15px;
+        border-bottom: 1px solid var(--dsc-color-gray);
+    }
+
+    .dsc-table tr:hover {
+        background: #f0f0f0;
+    }
+
+/* ============================ */
+/*           FORMS              */
+/* ============================ */
+
+.dsc-form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--dsc-color-gray);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    background: var(--dsc-color-white);
+}
+
+    .dsc-form-control:focus {
+        outline: none;
+        border-color: var(--dsc-color-blue);
+        box-shadow: 0px 0px 4px rgba(64, 123, 255, 0.4);
+    }
+
+/* ============================ */
+/*           FOOTER             */
+/* ============================ */
+
+.dsc-footer {
+    background: var(--dsc-color-white);
+    padding: 15px;
+    text-align: center;
+    margin-top: 40px;
+    box-shadow: 0px -2px 4px #d7d7d7;
+}

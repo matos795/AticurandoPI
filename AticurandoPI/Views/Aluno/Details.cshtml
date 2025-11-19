@@ -1,0 +1,13 @@
+﻿@model AticurandoPI.Models.Aluno
+<h2>Detalhes</h2>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Nome</dt><dd class="col-sm-10">@Model.Nome</dd>
+        <dt class="col-sm-2">CPF</dt><dd class="col-sm-10">@Model.Cpf</dd>
+        <dt class="col-sm-2">Email</dt><dd class="col-sm-10">@Model.Email</dd>
+        <dt class="col-sm-2">Telefone</dt><dd class="col-sm-10">@Model.Telefone</dd>
+        <dt class="col-sm-2">Nascimento</dt><dd class="col-sm-10">@Model.DataNascimento.ToString("yyyy-MM-dd")</dd>
+    </dl>
+</div>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Voltar</a>

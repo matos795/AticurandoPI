@@ -1,0 +1,18 @@
+@import url(style.css);
+
+#product-form-container-section {
+    padding: 40px 0px;
+}
+
+.dsc-product-form-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.dsc-product-form-buttons {
+    width: 100%;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+}

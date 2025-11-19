@@ -1,0 +1,412 @@
+
+:root {
+    --color-yellow: #FFE500;
+    --color-light-gray: #E8E8E8;
+    --color-gray: #636363;
+    --color-white: #fff;
+    --color-border-gray: #d9d9d9;
+    --color-placeholder-gray: #d9d9d9;
+    --color-green: #0CAF1D;
+    --color-blue: #3483FA;
+    --color-form-error-red: #FF3333;
+}
+
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+a, a:hover {
+    color: unset;
+    text-decoration: none;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+header {
+    background-color: var(--color-blue);
+    padding: 10px 10px;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: var(--color-light-gray);
+}
+
+/* Estilo padrão do link na navbar */
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 255) !important;
+    font-size: 1.1rem; /* Aumenta um pouco a fonte */
+    font-weight: 400; /* Deixa a letra um pouco mais grossa */
+    padding: 10px 15px; /* Dá mais espaço para clicar */
+}
+
+    /* Quando passar o mouse (Hover) */
+    .navbar-nav .nav-link:hover {
+        color: #ffffff !important; /* Fica branco total */
+        background-color: rgba(255, 255, 255, 0.1); /* Fundo levemente claro */
+        border-radius: 5px; /* Bordas arredondadas no hover */
+        transform: translateY(-2px); /* Sobe um pouquinho o texto */
+        font-weight: 500;
+    }
+
+.user-photo {
+    max-width: 40px; /* Tamanho da foto */
+    max-height: 40px; /* Tamanho da foto */
+    width: 100%;
+    border-radius: 50%; /* Deixa a foto circular */
+    object-fit: cover; /* Garante que a imagem preencha o círculo */
+    margin: 0 40px; /* Espaçamento em relação aos links */
+    background-color: #ffffff;
+    padding: 2px;
+}
+
+.logo-photo {
+    display: none;
+    width: 60px; /* Tamanho da foto */
+    height: 60px; /* Tamanho da foto */
+    border-radius: 50%; /* Deixa a foto circular */
+    object-fit: cover; /* Garante que a imagem preencha o círculo */
+    margin: 0 20px 0 40px; /* Espaçamento em relação aos links */
+    background-color: #ffffff;
+    padding: 5px;
+}
+
+@media(min-width: 576px) {
+    .logo-photo {
+        display: unset;
+    }
+
+    .logo-name-photo {
+        max-width: 210px;
+        width: 100%;
+        height: auto;
+    }
+
+    header {
+        background-color: var(--color-blue);
+        padding: 10px 20px;
+    }
+}
+
+.logo-name-photo {
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+}
+
+.user-photo:hover {
+    cursor: pointer;
+}
+
+/* ---------------------------------------- */
+/* Telas CRUDs*/
+
+
+#atc-container-section {
+    padding: 40px 0px;
+}
+
+.atc-container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.atc-mb20 {
+    margin-bottom: 20px;
+}
+
+.atc-mt20 {
+    margin-top: 20px;
+}
+
+.atc-txt-left {
+    text-align: left;
+}
+
+.atc-section-title {
+    text-align: center;
+    color: var(--color-gray);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+@media(min-width:576px) {
+    .atc-section-title {
+        text-align: left;
+        font-size: 24px;
+    }
+}
+
+/*---------------------------------------------------------------------*/
+/* button styles */
+
+.atc-btn-page-container {
+    width: 100%;
+    display: grid;
+    grid-gap: 20px;
+}
+
+@media (min-width: 576px) {
+    .atc-btn-page-container {
+        width: 220px;
+    }
+}
+
+.atc-btn {
+    border-radius: 4px;
+    height: 42px;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.atc-btn-blue {
+    width: 100%;
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    border: none;
+}
+
+    /* Hover para o botão Azul (se existir) */
+    .atc-btn-blue:hover {
+        opacity: 0.9; /* Suaviza um pouco a cor */
+    }
+
+
+.atc-btn-white {
+    background-color: var(--color-white);
+    color: var(--color-blue);
+    border: 1px solid var(--color-blue);
+}
+
+/* Hover para o botão Branco (Novo Aluno) */
+.atc-btn-white:hover {
+    background-color: var(--color-blue); /* Inverte para o fundo azul */
+    color: var(--color-white); /* Inverte para o texto branco */
+    border-color: var(--color-blue); /* Mantém a borda azul (opcional) */
+    transform: translateY(-2px); /* Efeito sutil de levantar o botão */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+}
+
+.atc-btn-next-page {
+    border: 1px solid var(--color-blue);
+    padding: 10px;
+    border-radius: 4px;
+    color: var(--color-blue);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/*---------------------------------------------------------------------*/
+/* search bar styles */
+
+.atc-search-bar {
+    height: 40px;
+    display: flex;
+    color: var(--color-light-gray);
+}
+
+    .atc-search-bar input:focus {
+        outline: none;
+    }
+
+    .atc-search-bar input::placeholder {
+        color: var(--color-placeholder-gray);
+    }
+
+    .atc-search-bar button, .atc-search-bar input {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        color: var(--color-gray);
+        border: 1px solid var(--color-border-gray);
+    }
+
+    .atc-search-bar button {
+        width: 40px;
+        justify-content: center;
+    }
+
+        .atc-search-bar button[type="submit"] {
+            border-right: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .atc-search-bar button[type="reset"] {
+            border-left: none;
+            border-radius: 0 4px 4px 0;
+        }
+
+    .atc-search-bar input {
+        width: calc(100% - 80px);
+        padding: 0px 9px;
+        color: var(--color-gray);
+        font-size: 16px;
+        border-left: none;
+        border-right: none;
+    }
+
+/*---------------------------------------------------------------------*/
+/* Table styles */
+
+.atc-table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+    .atc-table th:nth-child(1) {
+        border-top-left-radius: 10px;
+        padding-left: 20px;
+    }
+
+    .atc-table td:nth-child(1) {
+        padding-left: 20px;
+    }
+
+    .atc-table th:last-child {
+        border-top-right-radius: 10px;
+    }
+
+    .atc-table td:nth-child(2) {
+        padding-left: 10px;
+    }
+
+    .atc-table td:last-child {
+        padding-right: 5px;
+    }
+
+    .atc-table thead {
+        height: 55px;
+        font-size: 14px;
+        color: var(--color-gray);
+        background-color: var(--color-white);
+    }
+
+    .atc-table tbody {
+        text-align: center;
+        font-size: 12px;
+        color: var(--color-gray);
+        background-color: var(--color-white);
+    }
+
+        .atc-table tbody tr {
+            height: 70px;
+            border-top: 1px solid var(--color-border-gray);
+        }
+
+.atc-tb576 {
+    display: none;
+}
+
+.atc-tb768 {
+    display: none;
+}
+
+@media(min-width: 576px) {
+
+    .atc-table td:nth-child(1) {
+        padding-left: 20px;
+    }
+
+    .atc-table td:nth-child(2) {
+        padding-left: 10px;
+    }
+
+    .atc-table th:nth-child(1) {
+        padding-left: 20px;
+    }
+
+    .atc-table th:nth-child(2) {
+        padding-left: 10px;
+    }
+}
+
+@media(min-width: 768px) {
+    .atc-tb768 {
+        display: table-cell;
+    }
+}
+
+@media(min-width: 992px) {
+    .atc-table tbody {
+        font-size: 16px;
+    }
+}
+
+/*---------------------------------------------------------------------*/
+/* Estilos para Linhas Clicáveis (Overlay Link) */
+
+/* 1. Torna a linha o contêiner de posicionamento */
+.atc-table .atc-clickable-row {
+    position: relative; /* Essencial para posicionar o link de forma absoluta */
+    cursor: pointer; /* Indica visualmente que a linha é clicável */
+    transition: background-color 0.3s;
+}
+
+    /* Efeito de Hover na linha */
+    .atc-table .atc-clickable-row:hover {
+        background-color: var(--color-light-gray); /* Muda a cor da linha no hover */
+    }
+
+/* 2. Cria a camada de Link (a magia acontece aqui) */
+.atc-row-link-overlay {
+    position: absolute; /* Posiciona o link em relação ao TR */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa toda a largura da linha */
+    height: 100%; /* Ocupa toda a altura da linha */
+    z-index: 1; /* Garante que o link fique por baixo dos botões de ação */
+}
+
+/* 3. Garante que os botões de ação (Edit/Delete) fiquem por cima do link */
+.atc-action-above {
+    position: relative; /* Eleva os botões de ação */
+    z-index: 2; /* Deve ter um z-index maior que o link (z-index: 1) */
+}
+
+/*---------------------------------------------------------------------*/
+/* Estilo base para os botões de ação */
+
+.atc-action-btn {
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    display: inline-block;
+}
+
+    .atc-action-btn:hover {
+        color: var(--color-blue) !important;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+        transform: translateY(-2px);
+    }
+
+.atc-edit-btn {
+    color: var(--color-gray);
+}
+
+.atc-delete-btn {
+    color: var(--color-gray);
+}

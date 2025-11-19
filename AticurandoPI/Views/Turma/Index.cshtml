@@ -1,0 +1,43 @@
+﻿@model IEnumerable<AticurandoPI.Models.Turma>
+
+@{
+    ViewData["Title"] = "Turmas";
+}
+
+<h1>Turmas</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Nova Turma</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Curso</th>
+            <th>Turno</th>
+            <th>Data Início</th>
+            <th>Data Fim</th>
+            <th>Capacidade</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.Id</td>
+        <td>@item.Curso.Nome</td>
+        <td>@item.Turno</td>
+        <td>@item.DataInicio</td>
+        <td>@item.DataFim</td>
+        <td>@item.Capacidade</td>
+        <td>
+            <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+            <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+        </td>
+    </tr>
+}
+    </tbody>
+</table>
