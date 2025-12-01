@@ -4,40 +4,57 @@
     ViewData["Title"] = "Turmas";
 }
 
-<h1>Turmas</h1>
+<section id="atc-container-section" class="atc-container">
 
-<p>
-    <a class="btn btn-primary" asp-action="Create">Nova Turma</a>
+    <h1 class="atc-section-title atc-mb20">Turmas</h1>
+
+    <p class="atc-btn-page-container">
+        <a class="atc-btn atc-btn-white" asp-action="Create">Nova Turma</a>
 </p>
 
-<table class="table table-striped">
+    <form class="atc-search-bar">
+        <button type="submit">🔎︎</button>
+        <input type="text" placeholder="Nome da Turma" />
+        <button type="reset">✖</button>
+    </form>
+
+
+    <table class="atc-table atc-mb20 atc-mt20">
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Curso</th>
-            <th>Turno</th>
-            <th>Data Início</th>
-            <th>Data Fim</th>
-            <th>Capacidade</th>
+                <th class="atc-txt-left">Id</th>
+                <th class="atc-txt-left">Curso</th>
+                <th class="atc-txt-left">Turno</th>
+                <th class="atc-txt-left">Data Início</th>
+                <th class="atc-txt-left atc-tb768">Data Fim</th>
+                <th class="atc-txt-left atc-tb768">Capacidade</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model)
 {
-    <tr>
-        <td>@item.Id</td>
-        <td>@item.Curso.Nome</td>
-        <td>@item.Turno</td>
-        <td>@item.DataInicio</td>
-        <td>@item.DataFim</td>
-        <td>@item.Capacidade</td>
+    <tr class="atc-clickable-row">
+                    <td class="atc-txt-left">@item.Id</td>
+                    <td class="atc-txt-left">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="atc-row-link-overlay"></a>
+
+                        <span>@item.Curso.Nome</span>
+                    </td>
+                    <td class="atc-txt-left">@item.Turno</td>
+                    <td class="atc-txt-left">@item.DataInicio</td>
+                    <td class="atc-txt-left atc-tb768">@item.DataFim</td>
+                    <td class="atc-txt-left atc-tb768">@item.Capacidade</td>
         <td>
-            <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
-            <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-            <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="atc-action-btn atc-delete-btn atc-action-above">
+                            <i class="fa-solid fa-pencil"></i>
+                        </a> 
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="atc-action-btn atc-delete-btn atc-action-above">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
         </td>
     </tr>
 }
     </tbody>
 </table>
+</section>
