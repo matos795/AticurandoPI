@@ -3,26 +3,30 @@
 @{
     ViewData["Title"] = "Nova Matrícula";
 }
+<section id="form-container-section" class="atc-container">
+    <div class="atc-form-container">
 
-<h1>Nova Matrícula</h1>
-
-<form asp-action="Create" method="post">
+        <form asp-action="Create" method="post" class="atc-card atc-form">
     <div asp-validation-summary="All" class="text-danger"></div>
 
+            <h2>Nova Matrícula</h2>
+            <div class="atc-form-controls-container">
+
     <!-- Aluno -->
-    <div class="form-group">
-        <label asp-for="AlunoId">Aluno</label>
-        <select asp-for="AlunoId" asp-items="ViewBag.AlunoId" class="form-control" required></select>
+    <div>
+                    <select asp-for="AlunoId" asp-items="ViewBag.AlunoId" class="atc-form-control" required></select>
     </div>
 
     <!-- Turma -->
-    <div class="form-group">
-        <label asp-for="TurmaId">Turma</label>
-        <select asp-for="TurmaId" asp-items="ViewBag.TurmaId" class="form-control" required></select>
+    <div>
+                    <select asp-for="TurmaId" asp-items="ViewBag.TurmaId" class="atc-form-control" required></select>
     </div>
 
-    <br />
-    <button class="btn btn-primary">Salvar</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
-
+    <div class="atc-form-buttons atc-mt20">
+        <button type="submit" class="atc-btn atc-btn-blue">Salvar</button>
+        <a asp-action="Index" class="atc-btn atc-btn-white">Cancelar</a>
+    </div>
+    </div>
 </form>
+    </div>
+</section>

@@ -107,19 +107,19 @@ namespace AticurandoPI.Controllers
             return RedirectToAction("Index");
         }
 
-        //// GET: Details
-        //public IActionResult Details(int id)
-        //{
-        //    var matricula = _context.Matriculas
-        //        .Include(m => m.Aluno)
-        //        .Include(m => m.Turma)
-        //            .ThenInclude(t => t.Curso)
-        //        .FirstOrDefault(m => m.Id == id);
+        // GET: Details
+        public IActionResult Details(int id)
+        {
+            var matricula = _context.Matriculas
+               .Include(m => m.Aluno)
+                .Include(m => m.Turma)
+                   .ThenInclude(t => t.Curso)
+                .FirstOrDefault(m => m.Id == id);
 
-        //    if (matricula == null) return NotFound();
+          if (matricula == null) return NotFound();
 
-        //    return View(matricula);
-        //}
+          return View(matricula);
+        }
 
         public IActionResult Aprove(int id)
         {

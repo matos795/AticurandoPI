@@ -3,38 +3,53 @@
 @{
     ViewData["Title"] = "Matrículas";
 }
+<section id="atc-container-section" class="atc-container">
 
-<h1>Matrículas</h1>
+    <h1 class="atc-section-title atc-mb20">Solicitações de Matrícula</h1>
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">Nova Matrícula</a>
+    <p class="atc-btn-page-container">
+        <a class="atc-btn atc-btn-white" asp-action="Create">Nova Matrícula</a>
 </p>
 
-<table class="table table-striped">
+    <form class="atc-search-bar">
+        <button type="submit">🔎︎</button>
+        <input type="text" placeholder="Matrícula" />
+        <button type="reset">✖</button>
+    </form>
+
+    <table class="atc-table atc-mb20 atc-mt20">
     <thead>
         <tr>
-            <th>Aluno</th>
-            <th>Turma</th>
-            <th>Curso</th>
-            <th>Status</th>
-            <th>Data</th>
+                <th class="atc-txt-left">Id</th>
+                <th class="atc-txt-left">Aluno</th>
+                <th class="atc-txt-left atc-tb768">Turma</th>
+                <th class="atc-txt-left atc-tb768">Curso</th>
+                <th class="atc-txt-left">Status</th>
+                <th class="atc-txt-left atc-tb768">Data</th>
             <th></th>
+                <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var m in Model)
 {
-        <tr>
-            <td>@m.Aluno?.Nome</td>
-            <td>@m.Turma?.Turno</td>
-            <td>@m.Turma?.Curso?.Nome</td>
-            <td>@m.Status</td>
-            <td>@m.DataHora.ToString("dd/MM/yyyy HH:mm")</td>
+                <tr class="atc-clickable-row">
+                    <td class="atc-txt-left">@m.Id</td>
+                    <td class="atc-txt-left">
+                        <a asp-action="Details" asp-route-id="@m.Id" class="atc-row-link-overlay"></a>
+
+                        <span>@m.Aluno?.Nome</span>
+                    </td>
+                    <td class="atc-txt-left atc-tb768">@m.Turma?.Turno</td>
+                    <td class="atc-txt-left atc-tb768">@m.Turma?.Curso?.Nome</td>
+                    <td class="atc-txt-left">@m.Status</td>
+                    <td class="atc-txt-left atc-tb768">@m.DataHora.ToString("dd/MM/yyyy HH:mm")</td>
             <td>
-                <a asp-action="Aprove" asp-route-id="@m.Id">Aprovar</a> |
-                <a asp-action="Delete" asp-route-id="@m.Id">Recusar</a>
+                    <a asp-action="Aprove" asp-route-id="@m.Id" class="atc-btn-matricula atc-btn-green">Aprovar</a> 
+                    <a asp-action="Delete" asp-route-id="@m.Id" class="atc-btn-matricula atc-btn-red">Recusar</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+</section>
