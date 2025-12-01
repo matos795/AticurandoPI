@@ -9,13 +9,10 @@
             <h2>Editar Turma</h2>
             <div class="atc-form-controls-container">
                 <input type="hidden" asp-for="Id" />
-        <label asp-for="Capacidade"></label>
         <div>
                     <input asp-for="Capacidade" class="atc-form-control" type="number" required />
                 </div>
-    </div>
-    <div class="form-group">
-        <label asp-for="Turno"></label>
+    <div>
                 <select asp-for="Turno" class="atc-form-control" required>
             <option value="">Selecione o turno</option>
             <option value="Manhã">Manhã</option>
@@ -23,25 +20,19 @@
             <option value="Noite">Noite</option>
         </select>
     </div>
-    <div class="form-group">
-        <label asp-for="DataInicio"></label>
         <div>
                     <input asp-for="DataInicio" class="atc-form-control" type="datetime-local" required />
                 </div>
-    </div>
-    <div class="form-group">
-        <label asp-for="DataFim"></label>
         <div>
                     <input asp-for="DataFim" class="atc-form-control" type="datetime-local" required />
                 </div>
-    </div>
-    <div class="form-group">
-        <label asp-for="Curso"></label>
+            <div>
                 <select asp-for="CursoId" asp-items="ViewBag.CursoId" class="atc-form-control" required></select>
     </div>
-    <br />
+            <div class="atc-form-buttons atc-mt20">
             <button type="submit" class="atc-btn atc-btn-blue">Salvar</button>
             <a asp-action="Index" class="atc-btn atc-btn-white">Cancelar</a>
+            </div>
 </form>
     </div>
 </section>
