@@ -9,6 +9,7 @@
     --color-green: #0CAF1D;
     --color-blue: #0A1A3A;
     --color-form-error-red: #FF3333;
+    --color-red: #FF3333;
 }
 
 
@@ -216,6 +217,30 @@ body {
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
+}
+
+.atc-btn-matricula {
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+    .atc-btn-matricula:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+
+.atc-btn-green {
+    background-color: var(--color-green);
+    color: var(--color-white);
+    border: 1px solid var(--color-green);
+}
+
+.atc-btn-red {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border: 1px solid var(--color-red);
 }
 
 /*---------------------------------------------------------------------*/
@@ -518,3 +543,4 @@ body {
     background-color: var(--color-white);
     border-radius: 4px;
 }
+
