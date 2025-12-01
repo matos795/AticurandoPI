@@ -23,6 +23,7 @@
                 <th class="atc-txt-left">Nome</th>
                 <th class="atc-txt-left">Descrição</th>
             <th></th>
+                <th></th>
         </tr>
     </thead>
     <tbody>
@@ -30,13 +31,13 @@
 {
                 <tr class="atc-clickable-row">
                     <td class="atc-txt-left">@item.Id</td>
-                    <td class="atc-txt-left">@item.Nome</td>
-                    <td class="atc-txt-left">@item.Descricao</td>
                     <td class="atc-txt-left">
                         <a asp-action="Details" asp-route-id="@item.Id" class="atc-row-link-overlay"></a>
 
                         <span>@item.Nome</span>
                     </td>
+                    <td class="atc-txt-left">@item.Descricao</td>
+                    
                 <td>
                     <a asp-action="Delete" asp-route-id="@item.Id" class="atc-action-btn atc-delete-btn atc-action-above">
                         <i class="fa-solid fa-trash"></i>
