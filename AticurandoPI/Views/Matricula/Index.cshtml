@@ -35,7 +35,11 @@
 {
                 <tr class="atc-clickable-row">
                     <td class="atc-txt-left">@m.Id</td>
-                    <td class="atc-txt-left">@m.Aluno?.Nome</td>
+                    <td class="atc-txt-left">
+                        <a asp-action="Details" asp-route-id="@m.Id" class="atc-row-link-overlay"></a>
+
+                        <span>@m.Aluno?.Nome</span>
+                    </td>
                     <td class="atc-txt-left atc-tb768">@m.Turma?.Turno</td>
                     <td class="atc-txt-left atc-tb768">@m.Turma?.Curso?.Nome</td>
                     <td class="atc-txt-left">@m.Status</td>
