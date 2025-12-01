@@ -45,9 +45,11 @@
                     <td class="atc-txt-left">@m.Status</td>
                     <td class="atc-txt-left atc-tb768">@m.DataHora.ToString("dd/MM/yyyy HH:mm")</td>
             <td>
-                    <a asp-action="Aprove" asp-route-id="@m.Id" class="atc-btn-matricula atc-btn-green">Aprovar</a> 
-                    <a asp-action="Delete" asp-route-id="@m.Id" class="atc-btn-matricula atc-btn-red">Recusar</a>
-            </td>
+                        <a asp-action="Aprove" asp-route-id="@m.Id" class="atc-btn-matricula atc-btn-green atc-action-above">Aprovar</a>
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@m.Id" class="atc-btn-matricula atc-btn-red atc-action-above">Recusar</a>
+                    </td>
         </tr>
 }
     </tbody>
