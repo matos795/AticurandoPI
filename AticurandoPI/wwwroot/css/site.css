@@ -228,7 +228,7 @@ body {
 }
     .atc-btn-matricula:hover {
         opacity: 0.9;
-        transform: translateY(-2px);
+        transform: translateY(-3px);
     }
 
 .atc-btn-green {
